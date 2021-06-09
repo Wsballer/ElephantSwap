@@ -14,23 +14,34 @@ namespace ElephantSwap
             while (true)
             {
                 string input = Console.ReadLine();
+                Console.WriteLine("You pressed " + input);
                 if (input == "1")
                 {
-                    Console.WriteLine("You pressed 1\nCalling lloyd.WhoAmI()");
+                    Console.WriteLine("Calling lloyd.WhoAmI()");
                     lloyd.WhoAmI();
                 }
                 else if (input == "2")
                 {
-                    Console.WriteLine("You pressed 2\nCalling lucinda.WhoAmI()");
+                    Console.WriteLine("Calling lucinda.WhoAmI()");
                     lucinda.WhoAmI();
                 }
                 else if (input == "3")
                 {
-                    Console.WriteLine("You pressed 3\nReferences have been swapped");
+                    Console.WriteLine("References have been swapped");
                     Elephant holder;
                     holder = lucinda;
                     lucinda = lloyd;
                     lloyd = holder;
+                }
+                else if (input == "4")
+                {
+                    lloyd = lucinda;
+                    lloyd.EarSize = 4321;
+                    lloyd.WhoAmI();
+                }
+                else if (input == "5")
+                {
+                    lucinda.SpeakTo(lloyd, "Hi, Lloyd!");
                 }
                 else return;
                 Console.WriteLine();
